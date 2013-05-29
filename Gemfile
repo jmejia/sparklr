@@ -18,8 +18,18 @@ group :development do
   gem 'pry'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'cane'
+  gem 'reek'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'rack_session_access'
+  gem 'selenium-webdriver', '2.31.0'
+end
+
 gem 'jquery-rails'
-gem 'rspec-rails'
 gem 'figaro'
 gem 'dropbox-api'
 gem "therubyracer"

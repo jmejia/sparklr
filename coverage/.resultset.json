@@ -1,0 +1,19 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/joshmejia/code/gschool/sparklr/app/helpers/application_helper.rb": [
+        0,
+        null
+      ],
+      "/Users/joshmejia/code/gschool/sparklr/app/helpers/dropbox_helper.rb": [
+        0,
+        null
+      ],
+      "/Users/joshmejia/code/gschool/sparklr/app/helpers/users_helper.rb": [
+        0,
+        null
+      ]
+    },
+    "timestamp": 1369855264
+  }
+}
