@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-#gem 'pg'
+gem 'pg'
 gem 'riak-client'
 gem 'ripple', '~> 1.0.0.beta2'
 

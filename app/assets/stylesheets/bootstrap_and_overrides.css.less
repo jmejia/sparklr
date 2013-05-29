@@ -31,15 +31,22 @@
 //
 
 @blue: #8ED8F0;
-@red: #EC797E;
+@red: #E9544A;
 @orange: #FEA879;
 @green: #43C9A6;
+@gray: #535A6C;
+@dark: #2E2D3B;
+@light: #cbd7e0;
 
 @linkColor: @blue;
 @headingsFontWeight: normal;
 @headingsColor: #FFF;
 
+html{
+  background:@light;
+}
 .main{
+  color:@gray;
   margin-top:40px;
 }
 
@@ -49,14 +56,14 @@
 }
 
 .navbar-inner{
-  background: #2E2D3B;
+  background: @dark;
   border:none;
   height:50px;
 }
 .heading {
   height: 100px;
   padding-top:40px;
-  background: #535A6C;
+  background: @gray;
 }
 
 h1 {
@@ -77,3 +84,61 @@ h1 {
 .login {
   margin-top:15px;
 }
+
+footer{
+  margin-top:30px;
+  background:@light;
+  text-align:center;
+  color:@dark;
+  padding: 30px;
+}
+
+.btn {
+  border:none;
+  background:@gray;
+  color:#FFF;
+  text-shadow:none;
+  border-radius:20px;
+}
+
+.btn-primary{
+  background:#00BBD8;
+}
+
+.btn-primary:hover{
+  background:#00BBD0;
+}
+
+.btn-danger{
+  background:@red;
+}
+
+.bottom{
+  margin-top:45px;
+}
+// TABLE
+
+.table {
+  background:#dae6f0;
+  color:@gray;
+  border-radius:0px 20px;
+}
+
+.table tr{
+  border-radius:0px 30px;
+}
+
+.table th{
+  background:@gray;
+  color:#FFF;
+}
+
+.table th.top-right{
+  border-radius:0px 20px 0px 0px;
+}
+
+.table-striped tbody > tr:nth-child(odd) td{
+  border:none;
+  background:#cbd7e0;
+}
+
