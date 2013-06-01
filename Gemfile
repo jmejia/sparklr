@@ -19,7 +19,11 @@ group :development do
 end
 
 group :test do
+  gem 'vcr'
+  gem 'fakeweb'
+  gem 'capybara-mechanize'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
   gem 'cane'

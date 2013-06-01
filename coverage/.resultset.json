@@ -12,8 +12,11 @@
       "/Users/joshmejia/code/gschool/sparklr/app/helpers/users_helper.rb": [
         0,
         null
+      ],
+      "/Users/joshmejia/code/gschool/sparklr/spec/support/vcr.rb": [
+
       ]
     },
-    "timestamp": 1369855264
+    "timestamp": 1369957578
   }
 }
