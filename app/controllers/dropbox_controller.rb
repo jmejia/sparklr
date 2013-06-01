@@ -9,7 +9,7 @@ class DropboxController < ApplicationController
     request_token = DropboxVerification.request_token
     session[:token] = request_token.token
     session[:token_secret] = request_token.secret
-    redirect_to request_token.authorize_url(:oauth_callback => 'http://lvh.me:3000/dropbox/create')
+    redirect_to request_token.authorize_url(:oauth_callback => ENV["DROPBOX_CALLBACK"])
   end
 
 end

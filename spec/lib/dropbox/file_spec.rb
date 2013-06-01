@@ -1,22 +1,12 @@
-describe "Dropbox::File" do
+describe "TextParser" do
 
-  before(:all) do
-    @dropbox ||= Dropbox::Service.connect
-    @token   ||= "oq7q18wd0qw548z"
-    @secret  ||= "njwgxqtjo65g70m"
-    @user    ||= Dropbox::Service.new(@token, @secret)
-  end
-
-  context "finding a file" do
+  context "creating a new file" do
     before(:all) do
-      #@file = Dropbox::File.find_from_dropbox(@user, "sparkfile_test.txt")
-      #@file = @user.find("sparkfile_test.txt")
+      @file ||= "test1\ntest2"
     end
 
-    it "finds a specified text file" do
-      expect(@user.account.display_name).to eq("josh mejia")
-      puts @user.methods.sort
-      #expect(@file.class).to eq(Dropbox::API::File)
+    it "creates a new instance of a text file" do
+      expect(@file).to eq("test1\ntest2")
     end
 
     #it "reads the content of a text file"

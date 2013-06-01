@@ -17,4 +17,14 @@ describe "Dropbox::Service" do
     expect(@user.account.display_name).to eq("josh mejia")
   end
 
+  context "finding a file" do
+    before(:all) do
+      @file = @user.download("sparkfile_test.txt")
+    end
+
+    it "reads the content of a text file" do
+      expect(@file).to eq("test1\ntest2")
+    end
+  end
+
 end

@@ -1,4 +1,7 @@
 Sparklr::Application.routes.draw do
+  resources :sparks
+
+
   get "dropbox/create"
   get "dropbox/authorize"
 

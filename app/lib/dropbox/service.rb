@@ -16,8 +16,8 @@ module Dropbox
       @client ||= Dropbox::API::Client.new(token: token, secret: secret)
     end
 
-    def find_file(filename)
-      client.find(filename)
+    def download(filename)
+      @download = client.download filename
     end
 
     def self.connect

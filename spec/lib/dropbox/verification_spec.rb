@@ -1,17 +1,18 @@
 require "spec_helper"
+
 describe "DropboxVerification" do
 
   it "connects to the dropbox api" do
-    dropbox = DropboxService.connect
+    dropbox = Dropbox::Service.connect
     expect(dropbox).to eq("sandbox")
   end
 
   context "authorizing a dropbox account" do
     before(:all) do
-      @request_token ||= DropboxVerification.request_token
+      @request_token ||= Dropbox::Verification.request_token
       @token ||= @request_token.token
       @secret ||= @request_token.secret
-      @dropbox ||= DropboxVerification.new(@token, @secret)
+      @dropbox ||= Dropbox::Verification.new(@token, @secret)
       @fake_attributes ||= {
           uid: 4289865,
           token: "y5nzsymtlxnl6ng",
