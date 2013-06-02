@@ -1,7 +1,7 @@
 module Dropbox
   class Verification
 
-    attr_reader :token, :secret, :request_token,
+    attr_reader :token, :secret, :request_token, :consumer,
                 :access_token, :dropbox_user, :uid
 
     def self.request_token
@@ -16,6 +16,7 @@ module Dropbox
     def initialize(token, secret)
       @token = token
       @secret = secret
+      @consumer = Dropbox::Verification.consumer
     end
 
     def attributes
@@ -24,14 +25,6 @@ module Dropbox
 
     def uid
       attributes[:uid]
-    end
-
-    def token
-      attributes[:token]
-    end
-
-    def secret
-      attributes[:secret]
     end
 
     def email
@@ -70,7 +63,7 @@ module Dropbox
 
     def request_token_from_hash
       hash = { oauth_token: token, oauth_token_secret: secret }
-      OAuth::RequestToken.from_hash(Dropbox::Verification.consumer, hash)
+      OAuth::RequestToken.from_hash(consumer, hash)
     end
 
   end
