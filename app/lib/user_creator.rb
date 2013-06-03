@@ -17,6 +17,7 @@ class UserCreator
       user.secret       = service.secret
       user.email        = service.email
       user.display_name = service.display_name
+      user.slug         = service.display_name.gsub(" ", "-").downcase
     end
   end
 end

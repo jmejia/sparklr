@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601231125) do
+ActiveRecord::Schema.define(:version => 20130603174531) do
 
   create_table "sparks", :force => true do |t|
     t.text     "text"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130601231125) do
     t.datetime "updated_at",   :null => false
     t.integer  "dropbox_id"
     t.string   "display_name"
+    t.string   "slug"
   end
 
 end

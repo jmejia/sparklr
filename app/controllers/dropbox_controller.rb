@@ -2,7 +2,12 @@ class DropboxController < ApplicationController
   def create
     dropbox_user = Dropbox::Verification.new(session[:token], session[:token_secret])
     user = UserCreator.create_with_service(dropbox_user)
-    redirect_to user_path(user)
+    if user.persisted?
+      Dropbox::Service.create_file_for_user(user.token, user.secret, "sparkfile.txt")
+      redirect_to user_path(user)
+    else
+      redirect_to root_path
+    end
   end
 
   def authorize

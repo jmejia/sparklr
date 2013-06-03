@@ -20,6 +20,10 @@ module Dropbox
       @download = client.download filename
     end
 
+    def create_file(filename)
+      client.upload 'sparkfile.txt', ''
+    end
+
     def self.connect
       Dropbox::API::Config.app_key = ENV["DROPBOX_TOKEN"]
       Dropbox::API::Config.app_secret = ENV["DROPBOX_SECRET"]
@@ -30,6 +34,12 @@ module Dropbox
       connect
       user = Dropbox::Service.new(token, secret)
       user.download(filename)
+    end
+
+    def self.create_file_for_user(token, secret, filename)
+      connect
+      user = Dropbox::Service.new(token, secret)
+      user.create_file(filename)
     end
 
   end

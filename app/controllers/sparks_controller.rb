@@ -2,7 +2,8 @@ class SparksController < ApplicationController
   # GET /sparks
   # GET /sparks.json
   def index
-    @sparks = Spark.all
+    @user = User.find_by_slug(params[:user_slug])
+    @sparks = @user.sparks
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +80,11 @@ class SparksController < ApplicationController
       format.html { redirect_to sparks_url }
       format.json { head :no_content }
     end
+  end
+
+  def update_from_dropbox
+    user = User.find_by_slug(params[:user_slug])
+    DropboxWorker.perform_async(user.id)
+    redirect_to :back, notice: "Your sparks are being updated. Please refresh in a 30 seconds."
   end
 end
