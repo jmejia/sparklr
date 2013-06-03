@@ -16,6 +16,8 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'sinatra', require: false
+  gem 'slim'
 end
 
 group :test do
@@ -39,3 +41,4 @@ gem 'dropbox-api'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+gem 'sidekiq'

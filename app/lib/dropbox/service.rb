@@ -26,5 +26,11 @@ module Dropbox
       Dropbox::API::Config.mode = "sandbox"
     end
 
+    def self.lines_from_file(token, secret, filename)
+      connect
+      user = Dropbox::Service.new(token, secret)
+      user.download(filename)
+    end
+
   end
 end

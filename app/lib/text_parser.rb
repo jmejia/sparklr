@@ -7,7 +7,12 @@ class TextParser
   end
 
   def split
-    content.split("\n")
+    lines = content.split("\n")
+    remove_blank_lines(lines)
+  end
+
+  def remove_blank_lines(lines)
+    lines.delete_if { |line| line == "" }
   end
 
   def split_and_reverse
