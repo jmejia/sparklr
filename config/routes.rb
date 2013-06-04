@@ -2,6 +2,8 @@ require 'sidekiq/web'
 
 Sparklr::Application.routes.draw do
 
+  get "home/show"
+
   get "dropbox/create"
   get "dropbox/authorize"
 
@@ -15,5 +17,5 @@ Sparklr::Application.routes.draw do
 
   mount Sidekiq::Web, at: "/sidekiq"
 
-  # root :to => 'welcome#index'
+  root :to => 'home#show'
 end

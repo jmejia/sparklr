@@ -1,6 +1,8 @@
 class Spark < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :text, :user_id
+  attr_accessible :text, :user_id, :tag_list
+
+  #acts_as_taggable
 
   validates_presence_of :text
   validates_uniqueness_of :text

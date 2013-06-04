@@ -6,13 +6,15 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th class="top-right"><%= model_class.human_attribute_name(:text) %></th>
+      <th><%= model_class.human_attribute_name(:text) %></th>
+      <th class="top-right">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @sparks.each do |spark| %>
       <tr>
         <td><%= spark.text %></td>
+        <td><%= link_to "Edit", edit_spark_path(:user_slug => @user.slug, :id => spark.id), class: "btn btn-small btn-success" %></td>
       </tr>
     <% end %>
   </tbody>
