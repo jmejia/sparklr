@@ -4,8 +4,8 @@ describe "Dropbox::Service" do
 
   before(:all) do
     @dropbox = Dropbox::Service.connect
-    @token ||= "oq7q18wd0qw548z"
-    @secret ||= "njwgxqtjo65g70m"
+    @token ||= "a0yh707ohumol5x"
+    @secret ||= "zz7b4zjgyg7otty"
     @user = Dropbox::Service.new(@token, @secret)
   end
 
@@ -19,7 +19,7 @@ describe "Dropbox::Service" do
 
   context "finding a file" do
     before(:all) do
-      @file = @user.download("sparkfile_test.txt")
+      @file = @user.download("sparkfile.txt")
     end
 
     it "reads the content of a text file" do

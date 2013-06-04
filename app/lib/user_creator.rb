@@ -2,6 +2,9 @@ class UserCreator
 
   attr_reader :service
 
+  def self.from_service(service)
+  end
+
   def self.create_with_service(service)
     new(service).create_user
   end
