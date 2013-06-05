@@ -1,12 +1,11 @@
 <%- model_class = Spark -%>
 
-<%= session[:token] %><br>
-<%= session[:token_secret] %>
-
 <% content_for :heading  do %>
   <h1 class="pull-left"><%= @sparklr.page_title%></h1>
   <div class="dropbox-button pull-left">
-    <%= update_button(@sparklr.page_type) %>
+    <% if current_user == @sparklr.user %>
+      <%= update_button(@sparklr.page_type) %>
+    <% end %>
   </div>
 <% end %>
 

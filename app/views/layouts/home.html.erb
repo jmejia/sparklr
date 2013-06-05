@@ -28,14 +28,7 @@
           </a>
           <%= link_to "sparklr", root_path, :class => "brand" %>
           <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-            <ul class="login pull-right">
-              <li><%= link_to "Sign in with Dropbox", dropbox_authorize_path %></li>
-            </ul>
+            <%= render "shared/nav"%>
           </div><!--/.nav-collapse -->
         </div>
       </div>
