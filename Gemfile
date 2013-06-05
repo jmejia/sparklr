@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'pg'
-gem 'riak-client'
-gem 'ripple', '~> 1.0.0.beta2'
 gem 'pry'
 
 group :assets do
@@ -16,7 +14,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  #gem 'sinatra', require: false
   gem 'slim'
 end
 
@@ -35,6 +32,9 @@ group :test do
   gem 'selenium-webdriver', '2.31.0'
 end
 
+gem 'sinatra', require: false
+gem 'unicorn'
+gem 'redis'
 gem 'jquery-rails'
 gem 'figaro'
 gem 'dropbox-api'
