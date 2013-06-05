@@ -11,11 +11,30 @@ class Spark < ActiveRecord::Base
     sparks.each do |spark|
       new_spark = new(text: spark, user_id: user_id)
       begin
-        new_spark.save!
+        new_spark.save_hashtags if new_spark.save!
       rescue
         return "record already exists"
       end
     end
   end
 
+  def save_hashtags
+    self.tag_list = hashtags_to_joined_string
+    save
+  end
+
+  def hashtags_to_joined_string
+    hashtagged_words.map(&:remove_leading_hash).join(", ")
+  end
+
+  def hashtagged_words
+    text.split.grep /^#./
+  end
+
+end
+
+class String
+  def remove_leading_hash
+    sub!(/^#/, "")
+  end
 end

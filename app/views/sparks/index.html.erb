@@ -1,8 +1,12 @@
 <%- model_class = Spark -%>
+
 <% content_for :heading  do %>
   <h1 class="pull-left"><%= @sparklr.page_title%></h1>
-<div class="dropbox-button pull-left"><%= link_to "Update From Dropbox", update_from_dropbox_path, method: :put, class: 'btn btn-primary'%></div>
+  <div class="dropbox-button pull-left">
+    <%= update_button(@sparklr.page_type) %>
+  </div>
 <% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -14,12 +18,8 @@
     <% @sparklr.sparks.each do |spark| %>
       <tr>
         <td><%= spark.text %></td>
-        <td><%= link_to "Edit", edit_spark_path(:user_slug => @user.slug, :id => spark.id), class: "btn btn-small btn-success" %></td>
+        <td><%= link_to_actions(@sparklr.page_type, spark) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_spark_path,
-            :class => 'btn btn-primary' %>

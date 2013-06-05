@@ -2,13 +2,13 @@ class SparksController < ApplicationController
   # GET /sparks
   # GET /sparks.json
   def index
-    if params[:user_slug]
-      @user = User.find_by_slug(params[:user_slug])
-      @sparks = @user.sparks
-    else
-      @sparks = Spark.all
-    end
-    #@sparklr = SparksPresenter.new(params)
+    #if params[:user_slug]
+    #  @user = User.find_by_slug(params[:user_slug])
+    #  @sparks = @user.sparks
+    #else
+    #  @sparks = Spark.all
+    #end
+    @sparklr = SparksPresenter.new(params)
 
     respond_to do |format|
       format.html # index.html.erb
