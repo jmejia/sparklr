@@ -15,8 +15,8 @@ describe "DropboxVerification" do
       @dropbox ||= Dropbox::Verification.new(@token, @secret)
       @fake_attributes ||= {
           uid: 4289865,
-          token: "y5nzsymtlxnl6ng",
-          secret: "dlo58mrigdpjkp3",
+          token: "h0fn6stll2fyh8q",
+          secret: "qj2afb6fwz4mq4n",
           email: "joshua.mejia@gmail.com",
           display_name: "josh mejia"
         }
@@ -32,11 +32,11 @@ describe "DropboxVerification" do
     end
 
     it "returns token" do
-      expect(@dropbox.token).to eq("y5nzsymtlxnl6ng")
+      expect(@dropbox.token).to eq("h0fn6stll2fyh8q")
     end
 
     it "returns secret" do
-      expect(@dropbox.secret).to eq("dlo58mrigdpjkp3")
+      expect(@dropbox.secret).to eq("qj2afb6fwz4mq4n")
     end
 
     it "returns email" do

@@ -4,8 +4,8 @@ describe "Dropbox::Service" do
 
   before(:all) do
     @dropbox = Dropbox::Service.connect
-    @token ||= "a0yh707ohumol5x"
-    @secret ||= "zz7b4zjgyg7otty"
+    @token ||= ENV["USER_TOKEN"]
+    @secret ||= ENV["USER_SECRET"]
     @user = Dropbox::Service.new(@token, @secret)
   end
 

@@ -9,9 +9,5 @@ describe "TextParser" do
       expect(@file).to eq("test1\ntest2")
     end
 
-    #it "reads the content of a text file"
   end
-
-  #it "splits the text file at new lines"
-  #it "reverses the array of lines"
 end

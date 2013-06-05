@@ -123,6 +123,14 @@ GEM
     nokogiri (1.5.9)
     ntlm-http (0.1.1)
     oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-dropbox (0.2.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     parallel (0.6.5)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -269,6 +277,8 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  omniauth
+  omniauth-dropbox
   pg
   pry
   rack_session_access

@@ -7,6 +7,10 @@ Sparklr::Application.routes.draw do
   get "dropbox/create"
   get "dropbox/authorize"
 
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
   resources :users
 
   get 'tags/:tag', to: 'sparks#index', as: :tag

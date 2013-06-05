@@ -44,3 +44,5 @@ gem "less-rails"
 gem 'twitter-bootstrap-rails'
 gem 'sidekiq'
 gem 'acts-as-taggable-on'
+gem 'omniauth'
+gem 'omniauth-dropbox'
