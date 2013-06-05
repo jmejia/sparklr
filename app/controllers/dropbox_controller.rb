@@ -1,8 +1,9 @@
 class DropboxController < ApplicationController
   def create
     dropbox_user = Dropbox::Verification.new(session[:token], session[:token_secret])
-    user = UserCreator.create_with_service(dropbox_user)
+    user = UserCreator.from_service(dropbox_user)
     if user.persisted?
+      session[:user_id] = user.id
       Dropbox::Service.create_file_for_user(user.token, user.secret, "sparkfile.txt")
       redirect_to "/#{user.slug}", notice: "Your account has been created. You can begin editing your Sparkfile the Apps/sparklr folder of your Dropbox account."
     else
