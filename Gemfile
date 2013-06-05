@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'pry'
+gem 'slim'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
