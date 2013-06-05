@@ -3,7 +3,7 @@ class UserCreator
   attr_reader :service
 
   def self.from_service(service)
-    User.where(service.uid).first || create_with_service(service)
+    User.where(dropbox_id: service.uid).first || create_with_service(service)
   end
 
   def self.create_with_service(service)
