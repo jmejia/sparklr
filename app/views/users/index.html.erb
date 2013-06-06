@@ -7,7 +7,9 @@
     <tr>
       <th><%= model_class.human_attribute_name(:display_name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th class="top-right"><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% if current_user && current_user.slug == "josh-mejia" %>
+        <th class="top-right"><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +17,7 @@
       <tr>
         <td><%= link_to user.display_name, user.slug %></td>
         <td><%= user.email %></td>
+        <% if current_user && current_user.slug == "josh-mejia" %>
         <td>
           <div class="btn-group">
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -26,6 +29,7 @@
                       :class => 'btn btn-mini btn-danger' %>
           </div>
         </td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>

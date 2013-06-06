@@ -20,7 +20,7 @@ class SparksPresenter
 
   def sparks
     if params[:user_slug]
-      user.sparks
+      user.sparks.order("created_at DESC")
     else
       Spark.tagged_with(params[:tag])
     end

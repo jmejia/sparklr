@@ -13,4 +13,8 @@ module ApplicationHelper
       link_to "Update From Dropbox", update_from_dropbox_path, method: :put, class: 'btn btn-primary'
     end
   end
+
+  def formatted_date(date)
+    date.strftime("%D at %I:%M %p")
+  end
 end
