@@ -30,4 +30,8 @@ class SparksPresenter
     "user" if params[:user_slug]
   end
 
+  def slug
+    ""
+  end
+
 end

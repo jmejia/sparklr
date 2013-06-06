@@ -86,6 +86,18 @@
       </div>
     </div>
 
+    <div class="home blue">
+      <div class="row">
+        <div class="container">
+          <div class="tag_cloud">
+            <% tag_cloud Spark.tag_counts, %w[s m l] do |tag, css_class| %>
+              <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
       <footer>
         <div class="container">
           <p>&copy; sparklr 2013 | designed and developed by <a href="https://twitter.com/joshuamejia" target="_blank">josh mejia</a></p>
