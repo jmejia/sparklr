@@ -75,7 +75,16 @@ h1 {
 
 .navbar a.brand {
   color: @orange;
+  font-weight:bold;
   text-shadow:none;
+}
+
+.slogan{
+  padding-top:11px;
+  color: #FFF;
+  font-family: 'Lato';
+  font-size:1.1em;
+  font-weight:100;
 }
 
 .navbar .nav li a{
@@ -171,24 +180,51 @@ footer{
 
 //----------- HOME PAGE
 
-.home {padding:20px 0px; display:block;}
+.home {padding:10px 0px; display:block;text-align:center;}
 .blue {background:@blue;}
 .red {background: @red;}
 .orange {background: @orange;}
 .dark{background:@gray;}
-
-p.gigantic{
-  padding-top:30px;
+.home p {
+  padding-bottom:0.5em;
+  padding-top:0.5em;
+}
+.ultrathick{
   font-family:'Oswald', sans-serif;
   color:#FFF;
   text-transform:uppercase;
-  font-size:60px;
-  line-height:1.5em;
   font-weight: 700;
 }
 
-h1.home-big {
-  font-size:3.0em;
+.ultrathin {
+  font-family: 'Lato';
+  font-weight:100;
+  text-transform:uppercase;
+  color:#FFF;
+}
+
+.largest {
+  font-size:6.0em;
+  line-height:1.2em;
+}
+
+.large{
+  font-size:5.0em;
+  line-height:1.2em;
+}
+
+.medium{
+  font-size:4.0em;
+  line-height:1.0em;
+}
+
+.tiny{
+  font-size:0.3em;
+  line-height:1.2em;
+}
+
+.downcase{
+  text-transform:lowercase;
 }
 
 //------------ FORM STYLES
