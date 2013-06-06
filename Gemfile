@@ -31,6 +31,7 @@ group :test do
   gem 'simplecov', :require => false, :group => :test
   gem 'rack_session_access'
   gem 'selenium-webdriver', '2.31.0'
+  gem 'database_cleaner'
 end
 
 gem 'sinatra', require: false

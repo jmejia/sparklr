@@ -63,6 +63,7 @@ GEM
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
     connection_pool (1.0.0)
+    database_cleaner (1.0.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
     domain_name (0.5.11)
@@ -270,6 +271,7 @@ DEPENDENCIES
   capybara
   capybara-mechanize
   coffee-rails (~> 3.2.1)
+  database_cleaner
   dropbox-api
   factory_girl_rails
   fakeweb

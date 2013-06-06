@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "user visits profile" do
 
-  before(:all) do
+  before(:each) do
     @dropbox = Dropbox::Service.connect
     @user = User.create! do |user|
       user.dropbox_id = 1234567
