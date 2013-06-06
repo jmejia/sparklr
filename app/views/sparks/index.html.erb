@@ -14,7 +14,9 @@
     <tr>
       <th><%= model_class.human_attribute_name(:text) %></th>
       <th>Created at</th>
-      <th class="top-right">Actions</th>
+      <% if current_user && current_user.slug == "josh-mejia" %>
+        <th class="top-right">Actions</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +24,9 @@
       <tr>
         <td><%= spark.text %></td>
         <td><%= formatted_date(spark.created_at) %></td>
-        <td><%= link_to_actions(@sparklr.page_type, spark) %></td>
+        <% if current_user && current_user.slug == "josh-mejia" %>
+          <td><%= link_to_actions(@sparklr.page_type, spark) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
