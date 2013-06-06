@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
+    Dropbox::Service.create_file_for_user(user.token, user.secret, "sparkfile.txt")
     redirect_to "/#{user.slug}", notice: "Signed in!"
   end
 
