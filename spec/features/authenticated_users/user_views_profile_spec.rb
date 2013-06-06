@@ -14,12 +14,21 @@ describe "user visits profile" do
     end
   end
 
-  it "visits the home page", js: true do
+  it "clicks update dropbox link" do
     ApplicationController.any_instance.stub(:current_user).and_return(@user)
     visit 'http://lvh.me:1234/josh-mejia'
-    #click_link 'Update From Dropbox'
-    sleep 5
-    expect(page).to have_content "My Account"
+    click_link 'Update From Dropbox'
+    expect(DropboxWorker).to have(1).jobs
+  end
+
+  it "edits their own account details" do
+    ApplicationController.any_instance.stub(:current_user).and_return(@user)
+    visit 'http://lvh.me:1234/users'
+    click_link 'Edit'
+    fill_in('user_display_name', with: 'Joshua')
+    click_button "Update User"
+    visit 'http://lvh.me:1234/users'
+    expect(page).to have_content 'Joshua'
   end
 
 end

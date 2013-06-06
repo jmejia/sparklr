@@ -6,7 +6,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'rack_session_access/capybara'
-#require 'rspec/autorun'
+require 'sidekiq/testing'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -16,6 +16,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "random"
+
+  config.before(:suite) do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
+  end
 end
 
 Capybara.server_port = 1234

@@ -3,7 +3,7 @@
 <% content_for :heading  do %>
   <h1 class="pull-left"><%= @sparklr.page_title%></h1>
   <div class="dropbox-button pull-left">
-    <% if current_user.slug == @sparklr.user.slug %>
+    <% if current_user && current_user.slug == @sparklr.user.slug %>
       <%= update_button(@sparklr.page_type) %>
     <% end %>
   </div>
