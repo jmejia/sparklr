@@ -4,22 +4,8 @@ class SparksController < ApplicationController
     @sparklr = SparksPresenter.new(params)
   end
 
-  def new
-    @spark = Spark.new
-  end
-
   def edit
     @spark = Spark.find(params[:id])
-  end
-
-  def create
-    @spark = Spark.new(params[:spark])
-
-    if @spark.save
-      redirect_to @spark, notice: 'Spark was successfully created.'
-    else
-      render action: "new"
-    end
   end
 
   def update
